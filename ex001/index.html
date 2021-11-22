@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financiamento seu carro!!</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+ <h1>Financie seu Carro!!</h1>
+ <form action="salvar.php"methood="get" onsubmit="return calcular()"></form>
+
+ <label for="car">Marca do veículo:</label>
+ <input type="text"name="car" id="car"><br>
+
+ <label for="valor">Valor do veículo:R$</label>
+ <input type="number"name="valor" id="valor"><br>
+
+ <label for="parcela">Números da parcelas:</label>
+ <input type="number"name="parcela" id="parcela" min="0"max="36"><br>
+ 
+ <input type="submit" value="CALCULAR"><br>
+
+ <br> <h7>Se escolher os números de 1 a 4 parcelas: não existem juros.<br></h7>
+ <h7> De 5 a 12 parcelas:Juros será de 25%.</h7>
+ <br><h7>De 13 a 24 parcelas:Juros de 60%.</h7>
+ <br><h7>Mais de 24 parcelas:Juros de 80% </h7>
+ <p id="resultado">Result aqui...</p>
+
+</main>
+<script>
+function calcular(){
+ let modelo= document.getElementById("modelo").value
+ let parcela= Number(document.getElementById("parcela").value)
+ let valor = Number(document.getElementById("valor").value)
+ let resu = document.getElementById("resu")
+
+
+}
+
+
+
+
+</script>
+</body>
+</html>
