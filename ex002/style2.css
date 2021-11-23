@@ -1,0 +1,18 @@
+body{
+    background-color: rgb(94, 169, 204);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+    font-style: initial;}
+    
+    main{
+        background-color: rgba(228, 206, 206, 0.459);
+      padding: 2px;
+      margin: 200px;
+      border-radius: 15px;
+      margin: auto;
+      width: 600px;
+     text-orientation: sideways;
+    
+    
+    
+    }
