@@ -4,67 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de salários</title>
-    <link rel="stylesheet" href="style2.css">
+    <title>Controle Salárial</title>
+    
 </head>
 <body>
     <main>
-        <section>
-            <h1>Cadastre seus funcionários!!</h1>
-            <form action="salvar.php" method="get" onsubmit="return Cadastro()">
-                <label for="funcionários" >Quantos funcionários serão cadastrados? </label>
-
-                <input type="number" id="funcionários" min="1">
-                <input type="submit" id="but" value="CALCULE">
-            </form>
-
-            <p id="resultado">Resultado aqui...</p>   
-
-        
-        </section>
+        <h1>Controle Salárial</h1>
+        <button onclick="controle()">Calcule</button>
+        <p id="resultado">O resultado aqui...</p>
     </main>
     <script>
+        function controle() {
+            let nome = prompt("Qual o nome do funcionario?")
+            let num = Number(prompt("Qual o salário do funcionário?"))
+            let desc = Number(prompt("Qual será a porcentagem de reajuste salárial?"))
+            let porc = (num * desc) /100
+            let res = document.getElementById("resultado")
+            res.innerHTML = `O funcionário ${nome} ganhava ${num} por mês.Agora, com um reajuste salárial de ${desc},
+            ele passará a ganhar ${porc} a mais e terá um novo salário de ${num + porc}`
 
-let resultado = document.getElementById("resultado")
-function Cadastro() {
-    let funcio = Number(document.getElementById("funcionários").value)
-    let numero = 1
-    let soma = 0
-    let media = 0
-    let menor = 0
-    let maior = 0 
-    let salario = 0
-    while (numero <= funcio) {
-        salario = Number(prompt("Quanto é o salário dos funcionários?"))
-        soma += salario
-        media = soma / funcio
-
-        if (numero == 1) {
-            maior = salario
-            menor = salario
         }
-        else {
-            if (salario >maior) {
-                maior = salario
-            }
-            else if (salario < menor) {
-                menor = salario 
-            }
-        }
-        numero++
-    }
-    resultado.innerHTML = `A quantidade de salários cadastrados foi de: <strong>${funcio}</strong> funcionários.<br>
-
-     A empresa vai precisar de <strong>${soma}</strong> reais para o pagamento desses <strong>${funcio}</strong> funcionários.<br>
-
-      O maior salário pago foi <strong> ${maior}</strong> reais.<br>
-
-     O menor salário pago foi <strong> ${ menor}</strong> reais.<br>
-
-     A média dos salários dos <strong>${funcio}</strong> foi de <strong>${media}</strong>.`
-    return false }
-
-    </script>          
+    </script>
     
 </body>
 </html>
